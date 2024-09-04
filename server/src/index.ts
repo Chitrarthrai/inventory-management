@@ -6,6 +6,7 @@ import helmet from "helmet";
 import morgan from "morgan";
 /* ROUTE IMPORT */
 import dashboardRoutes from "./routes/dashboardRoute"
+import productRoutes from "./routes/productRoutes"
 /* CONFRIGRATIONS */
 dotenv.config();
 const app = express();
@@ -19,6 +20,7 @@ app.use(cors());
 
 /* ROUTES */
 app.use("/dashboard", dashboardRoutes); //http://localHost:8000/dashboard
+app.use("/products", productRoutes); //http://localHost:8000/products
 
 /* SERVER */
 const port = Number(process.env.PORT) || 3001;
